@@ -57,6 +57,27 @@
             <stringProp name="RegexExtractor.match_number"></stringProp>
           </RegexExtractor>
           <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">String expectedValue = &quot;white, blue&quot;;
+String actualValue = vars.get(&apos;c_R2D2Ree&apos;);
+log.info(&quot;value of correlation:&quot; + actualValue);
+if(expectedValue.equals(actualValue))
+	{
+		log.info(&quot;Expected Value matches with the Actual Value&quot;)
+	}
+else
+	{
+		log.info(&quot;Expected Value does not match with the Actual Value|Stopping Script excution&quot;)
+		AssertionResult.setFailureMessage(&quot;Expected Value does not match with the Actual Value|Stopping Script excution&quot;)
+		AssertionResult.setFailure(true);
+	}
+</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="1422772179">&quot;name&quot;:&quot;R2-D2&quot;,&quot;height&quot;:&quot;(.*?)&quot;,&quot;mass&quot;:&quot;(.*?)&quot;,&quot;hair_color&quot;:&quot;(.*?)&quot;,&quot;skin_color&quot;:&quot;white, blue&quot;</stringProp>
@@ -103,27 +124,6 @@
             </objProp>
             <stringProp name="filename"></stringProp>
           </ResultCollector>
-          <hashTree/>
-          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">String expectedValue = &quot;white, blue&quot;;
-String actualValue = vars.get(&apos;c_R2D2Ree&apos;);
-log.info(&quot;value of correlation:&quot; + actualValue);
-if(expectedValue.equals(actualValue))
-	{
-		log.info(&quot;Expected Value matches with the Actual Value&quot;)
-	}
-else
-	{
-		log.info(&quot;Expected Value does not match with the Actual Value|Stopping Script excution&quot;)
-		AssertionResult.setFailureMessage(&quot;Expected Value does not match with the Actual Value|Stopping Script excution&quot;)
-		AssertionResult.setFailure(true);
-	}
-</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223Assertion>
           <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">

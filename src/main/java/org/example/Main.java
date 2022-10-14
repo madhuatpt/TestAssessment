@@ -66,7 +66,7 @@ public class Main {
             int iPrice = Integer.parseInt(driver.findElement(By.className("CartItem__Price")).getText().replace("$", "").replace(".00", ""));
             int iQuantity = Integer.parseInt(driver.findElement(By.className("QuantitySelector__CurrentQuantity")).getAttribute("value"));
             String expectedTotalPrice = String.valueOf(iPrice * iQuantity);
-            System.out.println("Increasing Quantity to: " + iQuantity + "| Actual Total Price: " + driver.findElement(By.className("Cart__Total")).getText().replace("TOTAL:\n", "").replace("$", "").replace(".00", ""));
+            System.out.println("Actual Price/unit: " + iPrice + " | Increasing Quantity to: " + iQuantity + " | Actual Total Price: " + driver.findElement(By.className("Cart__Total")).getText().replace("TOTAL:\n", "").replace("$", "").replace(".00", ""));
             Assert.assertEquals(expectedTotalPrice, driver.findElement(By.className("Cart__Total")).getText().replace("TOTAL:\n", "").replace("$", "").replace(".00", ""));
         }
 
